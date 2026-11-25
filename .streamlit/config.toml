@@ -1,0 +1,16 @@
+[theme]
+base = "light"
+primaryColor = "#00786F"
+backgroundColor = "#F5F8FB"
+secondaryBackgroundColor = "#EAF0F6"
+textColor = "#152B40"
+font = "sans-serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+maxMessageSize = 32
+
+[client]
+toolbarMode = "viewer"

@@ -1,0 +1,48 @@
+threads: 2
+bootstrap_seed: 102207
+bootstrap_draws: 4000
+urgent_penalty_cents: 8000
+urgent_service_s: 180
+random_dispatch_seed: 10703
+policies:
+  B0: {planner: greedy, dispatch: never}
+  B1: {planner: static, dispatch: never}
+  B2: {planner: historical, dispatch: never}
+  B3: {planner: ml, dispatch: never}
+  B4: {planner: buffered, dispatch: never}
+  B5: {planner: buffered, dispatch: always}
+  B6: {planner: buffered, dispatch: periodic}
+  B7: {planner: buffered, dispatch: threshold}
+  B8: {planner: buffered, dispatch: multi_feature}
+  B9: {planner: buffered, dispatch: tabular}
+  B10: {planner: buffered, dispatch: dqn}
+  B11: {planner: buffered, dispatch: random_feasible}
+# Reserve per product on the single vehicle required for mandatory cold-chain orders.
+regimes:
+  normal: {demand: 0.93, pickup: 0.95, closing_shift_s: 600, reserve: 9, unavailable: null, traffic_factor: 1.0, service_extra_s: 0, urgents: 0, urgent_window_s: 3600, urgent_crates: [2, 6]}
+  moderate: {demand: 0.97, pickup: 1.0, closing_shift_s: 0, reserve: 9, unavailable: null, traffic_factor: 1.35, service_extra_s: 540, urgents: 1, urgent_window_s: 3300, urgent_crates: [2, 8]}
+  severe: {demand: 1.0, pickup: 1.15, closing_shift_s: -600, reserve: 10, unavailable: null, traffic_factor: 1.85, service_extra_s: 1020, urgents: 1, urgent_window_s: 2400, urgent_crates: [5, 12]}
+  urgent_pressure: {demand: 0.96, pickup: 1.05, closing_shift_s: 0, reserve: 11, unavailable: V01, traffic_factor: 1.45, service_extra_s: 660, urgents: 3, urgent_window_s: 2700, urgent_crates: [3, 13]}
+  limited_resources: {demand: 0.95, pickup: 1.1, closing_shift_s: -300, reserve: 4, unavailable: V02, traffic_factor: 1.55, service_extra_s: 780, urgents: 2, urgent_window_s: 3000, urgent_crates: [3, 10]}
+sensitivity:
+  reference: moderate
+  policies: [B4, B5, B8, B9, B10]
+  variants:
+    penalty_low: {field: urgent_penalty_cents, value: 4000}
+    penalty_high: {field: urgent_penalty_cents, value: 12000}
+    latency_low: {field: latency_s, value: 5}
+    latency_high: {field: latency_s, value: 60}
+    reserve_low: {field: reserve, value: 3}
+    reserve_high: {field: reserve, value: 14}
+    congestion_low: {field: traffic_factor, value: 1.15}
+    congestion_high: {field: traffic_factor, value: 2.05}
+    service_low: {field: service_extra_s, value: 240}
+    service_high: {field: service_extra_s, value: 1140}
+    windows_tight: {field: closing_shift_s, value: -900}
+    windows_wide: {field: closing_shift_s, value: 900}
+    fleet_light: {field: unavailable, value: V01}
+    fleet_heavy: {field: unavailable, value: V05}
+profiles:
+  development: {namespace: 101001, first_day: '2026-07-06', dates: 1, repeats: 1, sensitivity_first_day: '2026-07-13', sensitivity_dates: 1, solver_budget_s: 0.55, wall_limit_s: 95}
+  standard: {namespace: 102001, first_day: '2026-06-08', dates: 7, repeats: 1, sensitivity_first_day: '2026-06-22', sensitivity_dates: 3, solver_budget_s: 0.7, wall_limit_s: 360}
+  research: {namespace: 103001, first_day: '2026-07-20', dates: 7, repeats: 2, sensitivity_first_day: '2026-08-03', sensitivity_dates: 4, solver_budget_s: 0.9, wall_limit_s: 750}

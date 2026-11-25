@@ -1,0 +1,53 @@
+{
+  "checkpoints": [
+    {
+      "mode": "compact",
+      "path": "fit/dqn_compact_2917/step_1000.zip",
+      "path_sha256": "18ce2f6e539ddf9253a782d79757192a61112dd24401489b8b6b2652d38b727f",
+      "policy": "dqn_compact",
+      "replay": "fit/dqn_compact_2917/replay_1000.pkl",
+      "replay_sha256": "001bd31ff6a6c155558906d906d1c87e541fcc8652c73f49fb15c169a4a681f9",
+      "step": 1000,
+      "training_seed": 2917,
+      "validation_loss_mad": 1441.7987194444443
+    },
+    {
+      "mode": "compact",
+      "path": "fit/dqn_compact_2927/step_3000.zip",
+      "path_sha256": "01e2253a87bddfbff8ce593a8daf55aa09c0bf3de8a7659d0d4ae53855224942",
+      "policy": "dqn_compact",
+      "replay": "fit/dqn_compact_2927/replay_3000.pkl",
+      "replay_sha256": "765844e75e4fdc47d6298398ebf559f369b48961895f1738885970d054218004",
+      "step": 3000,
+      "training_seed": 2927,
+      "validation_loss_mad": 1432.402886111111
+    },
+    {
+      "mode": "compact",
+      "path": "fit/dqn_compact_2953/step_3000.zip",
+      "path_sha256": "1eaac8a073f555ecb9749d949a2d396365d3f0eb90d877f7ad073b01f9e07944",
+      "policy": "dqn_compact",
+      "replay": "fit/dqn_compact_2953/replay_3000.pkl",
+      "replay_sha256": "5a41f6529c49aecfb3ee54e783c73005d0e2106eb05ae82be6507ae6cb40cc20",
+      "step": 3000,
+      "training_seed": 2953,
+      "validation_loss_mad": 1429.102886111111
+    }
+  ],
+  "benchmark_protocol_sha256": "d515112c43320b3a94b53004726e1d3ba2bfb1cbb5d8b5c21aff463f682b798e",
+  "source_protocol_sha256": "efb9634c5233837b8a7321f3efff3a55381aae6aa88b30b84bfbf53cd98e447f",
+  "scope": "All benchmark cases, reuse their B4 plans, all three frozen training seeds",
+  "comparisons": [
+    [
+      "B12",
+      "B9",
+      "matched_information_neural_vs_tabular"
+    ],
+    [
+      "B10",
+      "B12",
+      "continuous_vs_compact_neural"
+    ]
+  ],
+  "wall_limit_s": 85
+}

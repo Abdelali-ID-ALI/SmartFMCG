@@ -1,0 +1,36 @@
+# Seconds since midnight and centimes of MAD.
+dispatch:
+  tick_s: 900
+  latency_s: 20
+  candidate_limit: 400
+  delay_cents_per_min: 180
+  change_cents: 200
+  overtime_cents_per_min: 300
+reserve_crates: 8
+urgent_service_s: 180
+urgent_penalty_cents: 8000
+bootstrap_draws: 4000
+bootstrap_seed: 45971
+regimes:
+  moderate:
+    traffic_factor: 1.35
+    traffic_duration_s: 1500
+    extra_service_s: [360, 660]
+    urgent_crates: [2, 6]
+    urgent_window_s: 3300
+  severe:
+    traffic_factor: 1.85
+    traffic_duration_s: 2700
+    extra_service_s: [780, 1320]
+    urgent_crates: [6, 12]
+    urgent_window_s: 2400
+  extreme:
+    traffic_factor: 2.25
+    traffic_duration_s: 3600
+    extra_service_s: [1200, 1800]
+    urgent_crates: [8, 16]
+    urgent_window_s: 2100
+profiles:
+  development: {days: 3, seeds: [317], regimes: [moderate]}
+  standard: {days: 11, seeds: [731, 1783], regimes: [moderate, severe]}
+  research: {days: 11, seeds: [4021, 5297, 6151], regimes: [moderate, severe, extreme]}

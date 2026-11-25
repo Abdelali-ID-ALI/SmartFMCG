@@ -1,0 +1,7 @@
+data/matrices/osrm-D01-C30.geojson
+data/matrices/osrm-ca1b0c455b8c92a1b799514b2283b936e4f427f6c7a184d7ac8cc60f6d742cc8.npz
+data/scalability/osrm-72cb79a19277cea249c6f41827c42c0b3404107ee5c7ce9da89e7e6c3919a288.npz
+data/scalability/osrm-blocks-3251f936128c940a6e9f5e6307e0f98c49755e8c0ce96c81c165efb991f3c60d.npz
+data/synthetic/traffic_observations.csv
+results/experiments/predict_then_optimize/plans.json
+results/experiments/traffic_ml/test_residuals.csv

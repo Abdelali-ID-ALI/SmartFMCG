@@ -1,0 +1,7 @@
+cvrp:
+  vehicles: 6
+  capacity_kg: 2300
+  search_budget_s: 1.0
+fmcg:
+  optional_penalty_mad: 125
+  search_budget_s: 2.0

@@ -1,0 +1,7 @@
+vehicle_id,vehicle_type,maximum_weight,maximum_volume,maximum_crates,maximum_pallets,fixed_operating_cost,cost_per_km,cost_per_hour,fuel_consumption,refrigerated,shift_start,shift_end
+V01,van,2300,10,195,4,160,2.2,45,10,False,07:30,17:30
+V02,van,2400,11,200,4,175,2.3,45,11,False,07:30,17:30
+V03,medium,2900,16,250,6,245,3.5,60,17,False,07:30,17:30
+V04,medium,3200,18,270,6,260,3.7,60,18,False,07:30,17:30
+V05,heavy,6000,30,500,12,390,5.0,75,25,False,07:30,17:30
+V06,refrigerated,3000,17,260,6,320,4.3,65,20,True,07:30,17:30

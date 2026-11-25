@@ -1,0 +1,7 @@
+case,policy,candidate_limit,customers_base,loaded_reserve_crates_base,loaded_reserve_crates_no_reserve,delta_objective_mad,delta_otif,delta_urgent_service_rate,delta_route_changes
+standard-100-2026-09-14-stress,B4,400,100,44,0,0.0,0.0,0.0,0
+standard-100-2026-09-14-stress,B5,400,100,44,0,0.0,0.0,0.0,0
+standard-100-2026-09-14-stress,B8,400,100,44,0,0.0,0.0,0.0,0
+standard-100-2026-09-26-stress,B4,400,100,44,0,0.0,0.0,0.0,0
+standard-100-2026-09-26-stress,B5,400,100,44,0,0.0,0.0,0.0,0
+standard-100-2026-09-26-stress,B8,400,100,44,0,0.0,0.0,0.0,0

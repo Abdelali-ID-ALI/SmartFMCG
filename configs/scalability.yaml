@@ -1,0 +1,50 @@
+threads: 2
+prediction_batch_arcs: 20000
+fleet:
+  window_s: 19800
+  target_load: 0.82
+  max_route_stops: 8
+  standby_fraction: 0.10
+regimes:
+  controlled: {reserve_crates: 8, traffic_factor: 1.30, service_extra_s: 420, service_event_rate: 0.04, urgent_rate: 0.04, urgent_window_s: 3300, urgent_crates: [2, 6]}
+  stress: {reserve_crates: 4, traffic_factor: 1.85, service_extra_s: 1020, service_event_rate: 0.12, urgent_rate: 0.10, urgent_window_s: 2400, urgent_crates: [3, 9]}
+urgent_penalty_cents: 8000
+urgent_service_s: 180
+candidate_budgets: [100, 400, 1000, 2000]
+reference_candidates: 400
+sweep_sizes: [50, 100]
+sweep_policies: [B5, B8]
+reserve_ablation_sizes: [100]
+geographic_cache:
+  50: {file: osrm-72cb79a19277cea249c6f41827c42c0b3404107ee5c7ce9da89e7e6c3919a288.npz, sha256: f4d245d1d34e298a9c80a2d64983b78e0d802ac50d484fe18ccd09ef4b13d39a}
+  100: {file: osrm-blocks-3251f936128c940a6e9f5e6307e0f98c49755e8c0ce96c81c165efb991f3c60d.npz, sha256: c2e7280a6d39cb7e4c5209ce524aa4fd4c8d1927e7fd8af5977daeeaad112a1b}
+profiles:
+  development:
+    customers: [30]
+    dates: ['2026-08-17']
+    namespace: 104101
+    geography: osrm
+    regimes: [controlled, stress]
+    budgets_s: [0.15, 0.60]
+    policies: [B4, B5, B8, B9, B10]
+    max_wall_s: 100
+  standard:
+    customers: [30, 50, 100]
+    dates: ['2026-09-14', '2026-09-26']
+    namespace: 104201
+    geography: osrm
+    regimes: [controlled, stress]
+    budgets_s: [0.15, 0.65, 1.80]
+    policies: [B4, B5, B8, B9, B10]
+    max_wall_s: 180
+  proxy:
+    customers: [100, 250, 500]
+    dates: ['2026-08-31']
+    namespace: 104301
+    geography: haversine
+    regimes: [controlled]
+    budgets_s: [0.15, 0.65]
+    policies: []
+    workload_only_sizes: [500]
+    skip_greedy_sizes: [250]
+    max_wall_s: 120

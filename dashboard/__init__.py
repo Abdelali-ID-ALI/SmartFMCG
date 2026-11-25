@@ -1,0 +1,1 @@
+"""SmartFMCG decision-support interface."""

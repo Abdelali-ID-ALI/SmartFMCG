@@ -1,0 +1,8 @@
+profile,customers,geography,status,process_peak_mib,wall_s,cases,replays
+development,30,osrm,complete,518.84765625,11.333094089997758,2,18
+proxy,100,haversine,complete,434.578125,3.5422254570003133,1,0
+proxy,250,haversine,complete,485.609375,11.259742825997819,1,0
+proxy,500,haversine,complete,564.84375,22.26968408099492,0,0
+standard,100,osrm,complete,566.453125,111.96917452200432,4,54
+standard,30,osrm,complete,534.43359375,35.98806512900046,4,36
+standard,50,osrm,complete,545.5546875,53.70515668400185,4,48

@@ -1,0 +1,28 @@
+{
+  "reference_checkpoint": "d0d3100",
+  "profile": "standard",
+  "settings": {
+    "test_days": 11,
+    "solver_budget_s": 0.9,
+    "iterations": 3,
+    "seed": 681
+  },
+  "reference_hour": 11,
+  "buffer_quantile": 0.8,
+  "buffer_ratio": 0.08870674036078358,
+  "matrix_sha256": "2507c45286a69d91d5fe3ca577b8cd4235c23ce4e2ea880a0f68ad4be0fe33f0",
+  "traffic_sha256": "3b2a38d69f7f5582cb9a1ab730be46cac34d963bae2c28d24469df22ab408e05",
+  "days": [
+    "2026-05-21",
+    "2026-05-22",
+    "2026-05-23",
+    "2026-05-24",
+    "2026-05-25",
+    "2026-05-26",
+    "2026-05-27",
+    "2026-05-28",
+    "2026-05-29",
+    "2026-05-30",
+    "2026-05-31"
+  ]
+}

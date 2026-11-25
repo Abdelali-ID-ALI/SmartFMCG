@@ -1,0 +1,6 @@
+seed: 42
+service_date: '2026-06-01'
+traffic_observations: 10000
+traffic_reference: osrm
+osrm_endpoint: 'https://routing.openstreetmap.de/routed-car'
+matrix_cache: data/matrices

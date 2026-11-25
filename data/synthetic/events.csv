@@ -1,0 +1,6 @@
+event_id,timestamp,event_type,target_id,severity,unit
+E04,2026-06-01T07:45,cancellation,C10,1.0,orders
+E01,2026-06-01T09:15,traffic_congestion,bourgogne,1.8,travel_time_multiplier
+E02,2026-06-01T10:30,service_delay,C03,9.0,minutes
+E03,2026-06-01T11:45,urgent_order,C03,7.0,crates
+E05,2026-06-01T12:30,extra_pickup,C30,9.0,crates

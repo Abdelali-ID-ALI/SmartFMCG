@@ -1,0 +1,22 @@
+# Phase 9B. Phase 9A supplies the network, replay and dispatch settings.
+threads: 2
+screen_seed: 2903
+seeds: [2917, 2927, 2953]
+learning_rates: [0.0003, 0.001]
+screen_steps: 2000
+final_steps: 4000
+checkpoint_interval: 1000
+exploration_decay_steps: 1600
+limits: {dqn: 28000, tabular: 36000, wall_s: 1200, checkpoint_reserve_s: 25}
+bootstrap_seed: 92701
+bootstrap_draws: 4000
+diagnostic_stride: 6
+# Roles have disjoint date blocks within 9B, and fresh random draws across phases.
+partitions:
+  train: {day_indices: [0, 2, 4, 6], namespace: 920009}
+  validation: {day_indices: [1, 8], namespace: 920021}
+  diagnostic: {day_indices: [3, 7], namespace: 920047}
+  test: {day_indices: [5, 9, 10], namespace: 920057}
+profiles:
+  standard: {routes: 3, per_day: [9, 6, 8]}
+  research: {routes: 4, per_day: [0, 0, 8]}

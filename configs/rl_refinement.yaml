@@ -1,0 +1,21 @@
+# Inherit the dispatch, prices and solver budget from the frozen phase-eight settings.
+alpha: 0.12
+gamma: 1.0
+epsilon_start: 0.9
+epsilon_end: 0.08
+probe_budget: 32
+tight_slack_s: 300
+potential_weight: 0.25
+reserve_crates: [3, 6, 9, 12]
+regular_crates_reduction: 4
+second_urgent_probability: 0.35
+partitions:
+  train: {day_indices: [0, 2, 4, 6], namespace: 88101}
+  validation: {day_indices: [1, 8], namespace: 88203}
+  test: {day_indices: [3, 5, 7, 9, 10], namespace: 88309}
+bootstrap_draws: 4000
+bootstrap_seed: 88113
+profiles:
+  development: {routes: 2, per_day: [2, 2, 2], episodes: 8, midpoint: 4, diagnostic_episodes: 4, seeds: [8817]}
+  standard: {routes: 3, per_day: [12, 6, 9], episodes: 72, midpoint: 36, diagnostic_episodes: 24, seeds: [8817, 9137, 9473]}
+  research: {routes: 4, per_day: [15, 9, 12], episodes: 144, midpoint: 72, diagnostic_episodes: 36, seeds: [18817, 19137, 19473]}

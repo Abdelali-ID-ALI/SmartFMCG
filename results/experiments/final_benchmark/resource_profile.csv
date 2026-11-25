@@ -1,0 +1,11 @@
+stage,wall_seconds,peak_rss_kib
+development_benchmark,71.73,567780
+standard_benchmark_and_sensitivity,333.30,628744
+matched_information_replay,37.91,559428
+standard_analysis,81.51,151608
+initial_figure_export,20.34,461640
+revised_figure_export,20.35,445952
+initial_notebook,3.63,114440
+final_notebook,3.02,114676
+regular_tests,26.49,554708
+audit_tests,4.74,148048

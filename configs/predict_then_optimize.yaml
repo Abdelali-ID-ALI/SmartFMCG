@@ -1,0 +1,6 @@
+reference_hour: 11
+buffer_quantile: 0.8
+profiles:
+  development: {test_days: 3, solver_budget_s: 0.6, iterations: 3, seed: 681}
+  standard: {test_days: 11, solver_budget_s: 0.9, iterations: 3, seed: 681}
+  research: {test_days: 11, solver_budget_s: 3.0, iterations: 4, seed: 681}

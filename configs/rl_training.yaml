@@ -1,0 +1,33 @@
+dispatch:
+  tick_s: 900
+  latency_s: 20
+  candidate_limit: 120
+  delay_cents_per_min: 180
+  change_cents: 200
+  overtime_cents_per_min: 300
+reward:
+  delay_cents_per_min: 180
+  overtime_cents_per_min: 300
+  change_cents: 200
+  attempt_cents: 50
+  mandatory_omission_cents: 25000
+solver_budget: 0.004
+epsilon_start: 0.9
+epsilon_end: 0.08
+checkpoint_every: 50
+reserve_crates: [4, 8, 12]
+regular_crates_reduction: 2
+urgent_penalty_cents: 8000
+partitions:
+  train: {day_indices: [0, 1, 2, 3, 4], namespace: 85101}
+  validation: {day_indices: [5, 6], namespace: 85102}
+  test: {day_indices: [7, 8, 9, 10], namespace: 85103}
+candidates:
+  - {alpha: 0.12, gamma: 1.0, time_aware: true}
+  - {alpha: 0.22, gamma: 0.995, time_aware: true}
+bootstrap_draws: 4000
+bootstrap_seed: 86175
+profiles:
+  development: {routes: 2, per_day: [1, 1, 1], episodes: 12, tuning_episodes: 0, seeds: [5107]}
+  standard: {routes: 3, per_day: [9, 6, 9], episodes: 180, tuning_episodes: 80, seeds: [5107, 7613, 9817]}
+  research: {routes: 4, per_day: [12, 9, 12], episodes: 220, tuning_episodes: 100, seeds: [5119, 7621, 9829]}

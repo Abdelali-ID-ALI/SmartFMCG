@@ -1,0 +1,6 @@
+seed: 42
+threads: 2
+training_days: 34
+validation_days: 11
+shap_background: 24
+shap_examples: 40
